@@ -514,7 +514,7 @@ bool exports_are_enabled() {
 		openSequenceFromText("web: "+file_name,file_text);		
 	}
 	#endif
-}*
+}*/
 
 void STMainWindow::slot_upload_sequence_to_web() {
 	QSettings settings("Magland","SequenceTree4");
