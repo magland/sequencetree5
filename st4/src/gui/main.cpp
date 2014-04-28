@@ -29,7 +29,7 @@
 #include "sstring.h"
 #include "slist.h"
 #include "stcommon.h"
-#include "update_code_from_web.h"
+//#include "update_code_from_web.h"
 
 
 
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	
 	/*if (!QFile(ST_CODE_DIR+"/nodetypes/foundation/_filelist.txt").exists()) {
 		qDebug() << "Updating code...";
-		update_code_from_web();
+		//update_code_from_web();
 	}*/
 
 	STMainWindow main_window;

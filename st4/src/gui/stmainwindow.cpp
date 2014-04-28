@@ -33,7 +33,7 @@
 #include "openfilefromwebdlg.h"
 #include "httpdownloader.h"
 #include "stcommon.h"
-#include "update_code_from_web.h"
+//#include "update_code_from_web.h"
 #define MSG_DELAY 3000
 #include "readrawdatadlg.h"
 
@@ -48,7 +48,7 @@ STMainWindow::STMainWindow(QWidget *parent) : QMainWindow(parent) {
 	
 	connect(ui.actionNewSequence,SIGNAL(triggered()),this,SLOT(slot_new_sequence()));
 	connect(ui.actionOpenSequence,SIGNAL(triggered()),this,SLOT(slot_open_sequence()));
-	connect(ui.actionOpenSequenceFromWeb,SIGNAL(triggered()),this,SLOT(slot_open_sequence_from_web()));
+	//connect(ui.actionOpenSequenceFromWeb,SIGNAL(triggered()),this,SLOT(slot_open_sequence_from_web()));
 	connect(ui.actionCloseSequence,SIGNAL(triggered()),this,SLOT(slot_close_sequence()));
 	connect(ui.actionSaveSequence,SIGNAL(triggered()),this,SLOT(slot_save_sequence()));
 	connect(ui.actionSaveSequenceAs,SIGNAL(triggered()),this,SLOT(slot_save_sequence_as()));
@@ -68,7 +68,7 @@ STMainWindow::STMainWindow(QWidget *parent) : QMainWindow(parent) {
 	connect(ui.actionExportToVirtualScanner,SIGNAL(triggered()),this,SLOT(slot_export_to_virtual_scanner()));
 	connect(ui.actionReadRawData,SIGNAL(triggered()),this,SLOT(slot_read_raw_data()));
 	connect(ui.actionCreateParameterFile,SIGNAL(triggered()),this,SLOT(slot_create_parameter_file()));
-	connect(ui.actionUpdateCodeFromWeb,SIGNAL(triggered()),this,SLOT(slot_update_code_from_web()));
+	//connect(ui.actionUpdateCodeFromWeb,SIGNAL(triggered()),this,SLOT(slot_update_code_from_web()));
 	ui.actionUpdateCodeFromWeb->setEnabled(false);
 	
 	connect(ui.actionChainLink,SIGNAL(triggered()),this,SLOT(slot_chainlink()));
@@ -468,17 +468,17 @@ void STMainWindow::slot_read_raw_data() {
 	
 }
 
-void STMainWindow::slot_update_code_from_web() {
+/*void STMainWindow::slot_update_code_from_web() {
 	bool static busy=false;
 	if (busy) return;
 	busy=true;
 	QMessageBox::information(this,"Updating code from web...","Updating code from web. See console window for status on the update.");
 	qDebug()  << "Updating code...";	
 	QDir(ST_ROOT_DIR).mkdir("code");
-	update_code_from_web();
+	//update_code_from_web();
 	qDebug()  << "Done updating.";
 	busy=false;
-}
+}*/
 
 #ifdef QT_WEB_KIT
 #include "staboutbox.h"
@@ -501,10 +501,7 @@ bool exports_are_enabled() {
 	return (QFileInfo(fname).exists());
 }
 
-void STMainWindow::slot_open_sequence_from_web() {
-	/*HttpDownloader HD;
-	QString txt=HD.downloadPage("http://trolltech.com/index.html");
-	qDebug() << "txt" << txt;*/
+/*void STMainWindow::slot_open_sequence_from_web() {
 	#ifdef QT_WEB_KIT
 	OpenFileFromWebDlg dlg(this);
 	dlg.setWindowTitle("Open sequence from web...");
@@ -517,7 +514,7 @@ void STMainWindow::slot_open_sequence_from_web() {
 		openSequenceFromText("web: "+file_name,file_text);		
 	}
 	#endif
-}
+}*
 
 void STMainWindow::slot_upload_sequence_to_web() {
 	QSettings settings("Magland","SequenceTree4");

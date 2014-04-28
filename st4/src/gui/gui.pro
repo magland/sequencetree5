@@ -56,8 +56,8 @@ SOURCES += streconstructionhighlighter.cpp
 
 HEADERS += stcommon.h
 
-HEADERS += update_code_from_web.h
-SOURCES += update_code_from_web.cpp
+#HEADERS += update_code_from_web.h
+#SOURCES += update_code_from_web.cpp
 
 INCLUDEPATH += ../meta
 DEPENDPATH += ../meta

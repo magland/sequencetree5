@@ -53,7 +53,7 @@ private:
 private slots:
 	void slot_new_sequence();
 	void slot_open_sequence();
-	void slot_open_sequence_from_web();
+	//void slot_open_sequence_from_web();
 	bool slot_close_sequence();
 	void slot_save_sequence();
 	void slot_save_sequence_as();
@@ -74,7 +74,7 @@ private slots:
 	void slot_export_to_virtual_scanner();
 	void slot_read_raw_data();
 	void slot_create_parameter_file();
-	void slot_update_code_from_web();
+	//void slot_update_code_from_web();
 	void slot_chainlink();
 	void slot_rtst();
 	void slot_mr_pulse_tool();
